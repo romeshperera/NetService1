@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  netservice1:
+    image: ${DOCKER_REGISTRY}netservice1
+    build:
+      context: .\NetService1
+      dockerfile: Dockerfile
