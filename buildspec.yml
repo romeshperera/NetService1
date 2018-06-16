@@ -1,0 +1,14 @@
+version: 0.2
+
+env:
+  variables:
+    SOLUTION: .\MicroServices.sln
+    PACKAGE_DIRECTORY: .\packages
+    DOTNET_FRAMEWORK: 4.6.1
+
+phases:
+  build:
+    commands:
+      - 'docker-compose -f docker-compose.yml up -d'
+artifacts:
+  files:
