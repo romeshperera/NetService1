@@ -7,6 +7,10 @@ env:
     DOTNET_FRAMEWORK: 4.6.1
 
 phases:
+  install:
+    commands:
+      - Invoke-WebRequest "https://github.com/docker/compose/releases/download/1.21.2/docker-compose-Windows-x86_64.exe" -UseBasicParsing -OutFile $Env:ProgramFiles\docker\docker-compose.exe
+      - Set-Alias docker-compose $Env:ProgramFiles\docker\docker-compose.exe -Scope Global -Verbose
   build:
     commands:
       - 'docker-compose -f docker-compose.yml up -d'
