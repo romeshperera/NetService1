@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  netservice1:
+    image: netservice1
+    build:
+      context: .\NetService1
+      dockerfile: Dockerfile
+
+networks:
+  default:
+    external:
+      name: nat
