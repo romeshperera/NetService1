@@ -1,0 +1,13 @@
+networks:
+  default:
+    external:
+      name: nat
+services:
+  netservice1:
+    build:
+      context: C:\Users\Administrator\source\repos\TestServices\NetService1\NetService1
+      dockerfile: Dockerfile
+    image: netservice1
+    ports:
+    - target: 80
+version: '3.4'
